@@ -5,6 +5,11 @@ defmodule Dicer do
 
   @langauges [:portuguese, :latin]
 
+  @typedoc """
+  Diceware word lists specific by language
+  """
+  @type languages() :: :portuguese | :latin
+
   @doc """
   Finds `quant` words in the `language` diceware list
 
@@ -12,13 +17,12 @@ defmodule Dicer do
 
   ## Examples
 
-    iex> Dicer.get_words(5, :latin)
-
-    ["incensi", "essem", "archias", "salsus", "angusta"]
+      iex> Dicer.get_words(5, :latin)
+      ["incensi", "essem", "archias", "salsus", "angusta"]
 
   """
 
-  @spec get_words(integer(), :portuguese | :latin) :: [binary()]
+  @spec get_words(integer(), languages()) :: [binary()]
   def get_words(quant, language)
       when is_integer(quant) and is_atom(language) and language in @langauges do
     diceware_list = file2keyword("./diceware/#{language}.txt")
