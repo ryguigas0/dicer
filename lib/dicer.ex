@@ -25,7 +25,7 @@ defmodule Dicer do
   @spec get_words(integer(), languages()) :: [binary()]
   def get_words(quant, language)
       when is_integer(quant) and is_atom(language) and language in @langauges do
-    diceware_list = file2keyword("./diceware/#{language}.txt")
+    diceware_list = file2keyword("./lists/#{language}.txt")
 
     1..quant
     |> Enum.map(fn _ -> get_number() |> find_word(diceware_list) end)
@@ -44,7 +44,7 @@ defmodule Dicer do
     |> Enum.map(fn line ->
       [num, word] = String.split(line, "\t", trim: true)
 
-      {:"#{num}", word}
+      {String.to_atom(num), word}
     end)
   end
 

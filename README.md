@@ -1,6 +1,6 @@
 # Dicer
 
-**TODO: Add description**
+Generating word lists based on [diceware](https://en.wikipedia.org/wiki/Diceware) with Elixir
 
 ## Installation
 
