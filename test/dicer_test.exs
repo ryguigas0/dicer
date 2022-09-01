@@ -1,6 +1,5 @@
 defmodule DicerTest do
   use ExUnit.Case
-  doctest Dicer
 
   test "generates any size string list with an language" do
     size = :rand.uniform(30)

@@ -17,7 +17,7 @@ defmodule Dicer.MixProject do
       docs: [
         main: "Dicer",
         extras: ["README.md"]
-      ]
+      ],
     ]
   end
 
